@@ -1,13 +1,13 @@
 import tweepy, time, sys
 
 # Uncomment to run tests
-from credentials import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
+# from credentials import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
 
-#from os import environ
-#CONSUMER_KEY = environ['CONSUMER_KEY']
-#CONSUMER_SECRET = environ['CONSUMER_SECRET']
-#ACCESS_KEY = environ['ACCESS_KEY']
-#ACCESS_SECRET = environ['ACCESS_SECRET']
+from os import environ
+CONSUMER_KEY = environ['CONSUMER_KEY']
+CONSUMER_SECRET = environ['CONSUMER_SECRET']
+ACCESS_KEY = environ['ACCESS_KEY']
+ACCESS_SECRET = environ['ACCESS_SECRET']
 
 
 text_to_red = "helloworld.txt"
