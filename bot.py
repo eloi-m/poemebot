@@ -2,6 +2,7 @@ import tweepy
 import schedule
 import time
 import random
+from datetime import datetime
 
 from Poem import Poem
 from Poem_database import Poem_database, db
@@ -31,6 +32,11 @@ poem = Poem(
     title=random_poem.title,
     content=random_poem.content
 )
+
+now = datetime.now()
+current_time = now.strftime("%H:%M:%S")
+print(f"Current Time : {current_time}")
+
 
 print(f"Poem {poem.title} \n {poem.content}")
 poem.parse()
