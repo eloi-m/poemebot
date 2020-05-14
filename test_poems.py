@@ -105,7 +105,8 @@ title_tests = [
     "Le fils des armures",
     "L'abandon",
     "Aux Champs Élyséens",
-    "Le confiteor de l'artiste"
+    "Le confiteor de l'artiste",
+    "La Gitana"
 ]
 
 for test in title_tests:

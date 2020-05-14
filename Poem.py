@@ -26,16 +26,19 @@ def can_split_in_two(lines):
 def split_in_two(lines):
     n = len(lines)
     assert (n % 2 == 0)
-    new_chunk_1 = "".join(line + "\n" for line in lines[:n // 2])
-    new_chunk_2 = "".join(line + "\n" for line in lines[n // 2:])
+    new_chunk_1 = f"".join(f"{line}\n" for line in lines[:n // 2])
+    new_chunk_2 = f"".join(f"{line}\n" for line in lines[n // 2:])
     return new_chunk_1, new_chunk_2
 
 
 def count_characters(object):
     if isinstance(object, list):
+        # A newline (\n) counts as 1 character
+        number_of_characters_of_a_newline = 1
         sum = 0
         for line in object:
-            sum = sum + len(line)
+            # We'll need some additional space to put the \n later, here's why I'm adding some characters
+            sum = sum + len(line) + number_of_characters_of_a_newline
         return sum
     else:
         return len(object)
@@ -109,7 +112,7 @@ class Poem:
         raw_text = self.content.replace("\n\r\n", "\n\n")
 
         # Check if the poem uses double newlines every single time.
-        print(f"Does the poem uses double newlines : {uses_double_newlines_every_time(raw_text)}")
+        print(f"Does the poem use double newlines : {uses_double_newlines_every_time(raw_text)}")
         if uses_double_newlines_every_time(raw_text):
             # If it does, replace every "\n\n" by "\n".
             raw_text = raw_text.replace("\n\n", "\n").replace("\n\n\n", "\n\n")
@@ -118,7 +121,7 @@ class Poem:
         paragraphs = raw_text.split("\n\n")
 
         # Ban useless first lines
-        banned_first_lines = ["Sonnet."]
+        banned_first_lines = ["Sonnet.", "Élégie."]
         if paragraphs[0] in banned_first_lines:
             del paragraphs[0]
 
